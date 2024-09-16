@@ -23,6 +23,7 @@ export default function Form({ onAddItems }) {
       <select
         value={quantity}
         onChange={(e) => setQuantity(Number(e.target.value))}
+        aria-label="number luggage"
       >
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
@@ -36,7 +37,9 @@ export default function Form({ onAddItems }) {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button>Add</button>
+      <button id="add" aria-label="add new luggage">
+        Add
+      </button>
     </form>
   );
 }
